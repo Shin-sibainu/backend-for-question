@@ -32,7 +32,7 @@ router.post("/post", isAuthenticated, async (req, res) => {
     res.status(201).json(newPost);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "サーバーエラーです。" });
+    res.status(500).json({ message: "サーバーエラー1です。" });
   }
 });
 
@@ -53,7 +53,7 @@ router.get("/get_latest_post", async (req, res) => {
     return res.json(latestPosts);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "サーバーエラーです。" });
+    res.status(500).json({ message: "サーバーエラー2です。" });
   }
 });
 
@@ -76,7 +76,7 @@ router.get("/:userId", async (req, res) => {
     res.status(200).json(userPosts);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "サーバーエラーです。" });
+    res.status(500).json({ message: "サーバーエラー3です。" });
   }
 });
 
