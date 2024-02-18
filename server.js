@@ -9,11 +9,13 @@ require("dotenv").config();
 
 const PORT = 5000;
 
-app.use(cors{
+app.use(
+  cors({
     origin: process.env.CLIENT_URL, //アクセス許可するオリジン
     credentials: true, //レスポンスヘッダーにAccess-Control-Allow-Credentials追加
-    optionsSuccessStatus: 200 //レスポンスstatusを200に設定
-});
+    optionsSuccessStatus: 200, //レスポンスstatusを200に設定
+  })
+);
 app.use(express.json());
 app.use("/api/auth", authRoute);
 app.use("/api/posts", postsRoute);
